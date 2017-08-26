@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  The world is your oyster.
+  <p>
+    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
+  </p>
+
+  <div>
+    <ion-label color="danger" fixed>Upload the file:</ion-label>
+
+    <input type="file" multiple #input/>
+
+    <button ion-button small (click)="fileUpload()" color="danger">Upload File</button>
+  </div>
+
+  <ion-grid>
+    <ion-row *ngIf="photos != null" style="flex-wrap: wrap;">
+      <ion-col col-6 col-md-4 *ngFor="let image of photos | async">
+
+        <img style="height: 200px;width: 250px; align-items: left"
+             [src]="image.gallary"/>
+
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>
